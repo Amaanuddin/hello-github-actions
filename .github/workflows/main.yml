@@ -4,6 +4,10 @@ jobs:
   build:
     name: Hello world action
     runs-on: ubuntu-latest
+    run: |
+    echo "Pull request's base branch is: ${BASE_BRANCH}"
+    env:
+      BASE_BRANCH: ${{ github.base_ref }}
     steps:
       - uses: actions/checkout@v1
       - uses: ./action-a
