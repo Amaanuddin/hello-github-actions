@@ -4,8 +4,7 @@ jobs:
   build:
     name: Hello world action
     runs-on: ubuntu-latest
-    run: |
-    echo "Pull request's base branch is: ${BASE_BRANCH}"
+    
     env:
       BASE_BRANCH: ${{ github.base_ref }}
     steps:
@@ -13,3 +12,6 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Mona"
+      - name: print Branch
+        run: |
+          echo "Pull request's base branch is: ${BASE_BRANCH}"  
