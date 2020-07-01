@@ -12,5 +12,6 @@ jobs:
       - name: print Branch
         env:
           BASE_BRANCH: ${{ github.ref }}
+        if: BASE_BRANCH##*/ === 'echo-branch-name'
         run: |
           echo "Pull request's base branch is: ${BASE_BRANCH##*/}"  
