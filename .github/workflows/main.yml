@@ -11,6 +11,6 @@ jobs:
           MY_NAME: "Mona"
       - name: print Branch
         env:
-          BASE_BRANCH: ${{ github.base_ref }}
+          BASE_BRANCH: ${{ github.ref }}
         run: |
-          echo "Pull request's base branch is: ${GITHUB_BASE_REF}"  
+          echo "Pull request's base branch is: ${BASE_BRANCH}"  
